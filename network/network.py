@@ -36,7 +36,7 @@ class Network(object):
 			activation=output_activation
 		)
 		self.create_network(hidden_layer, output_layer)
-
+		self.predict = theano.function(inputs=[ input ], outputs=self.output)
 
 	def create_network(self, hidden_layer, output_layer):
 		self.hiddenLayer = []
